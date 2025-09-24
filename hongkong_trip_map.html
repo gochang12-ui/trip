@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>홍콩 가족여행 지도</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <style>
+    #map { height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    var map = L.map('map').setView([22.3193, 114.1694], 12);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19
+    }).addTo(map);
+    L.marker([22.2761, 114.1598]).addTo(map).bindPopup("빅토리아 피크");
+    L.marker([22.2828, 114.1575]).addTo(map).bindPopup("센트럴 스타 페리");
+  </script>
+</body>
+</html>
